@@ -2,4 +2,4 @@
 
 Simple Javascript / HTML5 game
 
-Deployed on http://clickit.pair.com/javascript/balloons/
+Deployed on http://www.amicabile.com/javascript/balloons/

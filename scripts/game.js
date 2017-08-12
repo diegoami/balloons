@@ -1,5 +1,5 @@
-var INITY = 440;
-var XMAX = 1000;
+var INITY = 390;
+var XMAX = 640;
 
 var balloonConstructor = function(xcoord, ycoord, size, color) {
     var that;
@@ -55,6 +55,8 @@ Game.init = function() {
     this.balloons = [];
     this.balloons_caught = 0;
     this.lostBalloons = 0;
+//this.canvas.width($(window).width());
+//    this.canvas.height($(window).height());
     var that = this;
     $('#balloon_canvas').click( function(event) {
         var x = event.pageX - 0,
@@ -113,7 +115,7 @@ Game.draw = function() {
 Game.clear = function() {
     var self = this;
     self.ctx = self.canvas[0].getContext('2d');
-    self.ctx.clearRect( 0, 0, 1000, 460);
+    self.ctx.clearRect( 0, 0, 640, 390);
 }
     /*
 

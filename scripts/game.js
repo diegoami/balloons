@@ -1,5 +1,6 @@
-var INITY = 390;
-var XMAX = 640;
+
+var INITY = $('#balloon_canvas').height;
+var XMAX = $('#balloon_canvas').width;
 
 var balloonConstructor = function(xcoord, ycoord, size, color) {
     var that;
@@ -45,12 +46,20 @@ var balloonConstructor = function(xcoord, ycoord, size, color) {
 var Game = { };
 Game.fps = 50;
 
+window.addEventListener('resize', Game.resizeCanvas, false);
 
 
 Game.init = function() {
+
     this._intervalId = setInterval(Game.run, 1000 / Game.fps);
-    this.canvas = $('#balloon_canvas');
-    this.canvasbackup = $('#balloon_canvas').clone(true);
+    this.canvas = $('#balloon_canvas')[0];
+    this.canvasbackup = $('#balloon_canvas').clone(true)[0];
+    INITY = this.canvas.height;
+    XMAX = this.canvas.width;
+
+
+    this.resizeCanvas();
+
     this.div = $('#div_canvas');
     this.balloons = [];
     this.balloons_caught = 0;
@@ -73,6 +82,14 @@ Game.init = function() {
             }
         }
    });
+}
+
+Game.resizeCanvas = function() {
+
+    INITY = this.canvas.height;
+    XMAX = this.canvas.width;
+
+
 }
 
 Game.randomBalloon = function() {
@@ -107,15 +124,15 @@ Game.tick = function() {
 
 Game.draw = function() {
     for (var i in this.balloons) {
-        this.balloons[i].draw(this.canvas);
+        this.balloons[i].draw();
     }
 
 };
 
 Game.clear = function() {
     var self = this;
-    self.ctx = self.canvas[0].getContext('2d');
-    self.ctx.clearRect( 0, 0, 640, 390);
+    self.ctx = self.canvas.getContext('2d');
+    self.ctx.clearRect( 0, 0, XMAX, INITY);
 }
     /*
 

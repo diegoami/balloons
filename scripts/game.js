@@ -1,8 +1,7 @@
 
-var INITY = $('#balloon_canvas').height;
-var XMAX = $('#balloon_canvas').width;
 
-var balloonConstructor = function(xcoord, ycoord, size, color) {
+
+var balloonConstructor = function(xcoord, ycoord, size, color, xmax) {
     var that;
     that = new Object();
     that.xcoord = xcoord ;
@@ -11,6 +10,7 @@ var balloonConstructor = function(xcoord, ycoord, size, color) {
     that.color = color;
     that.delta = -1 * ((Math.random()*3.4)+0.25);
     that.xdelta = -.5+ Math.random();
+    that.xmax = xmax;
 
     that.tick = function() {
         that.ycoord = that.ycoord +that.delta;
@@ -18,7 +18,7 @@ var balloonConstructor = function(xcoord, ycoord, size, color) {
         if (that.xcoord < 0) {
             that.xdelta = -that.xdelta;;
         }
-        if (that.xcoord > XMAX) {
+        if (that.xcoord > that.xmax) {
             that.xdelta = -that.xdelta;
         }
 
@@ -45,33 +45,34 @@ var balloonConstructor = function(xcoord, ycoord, size, color) {
 
 var Game = { };
 Game.fps = 50;
+var css_items = Object.keys(cssKeywords);
 
-window.addEventListener('resize', Game.resizeCanvas, false);
+function getRandomCssColor() {
 
+    return css_items[Math.floor(Math.random() * css_items.length)];
+}
 
 Game.init = function() {
 
-    this._intervalId = setInterval(Game.run, 1000 / Game.fps);
+
     this.canvas = $('#balloon_canvas')[0];
-    this.canvasbackup = $('#balloon_canvas').clone(true)[0];
-    INITY = this.canvas.height;
-    XMAX = this.canvas.width;
+    //this.canvasbackup = $('#balloon_canvas').clone(true)[0];
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+    this.ctx = this.canvas.getContext('2d');
 
-
-    this.resizeCanvas();
+    ratio = this.canvas.width / 1000;
 
     this.div = $('#div_canvas');
     this.balloons = [];
     this.balloons_caught = 0;
     this.lostBalloons = 0;
-//this.canvas.width($(window).width());
-//    this.canvas.height($(window).height());
+
     var that = this;
     $('#balloon_canvas').click( function(event) {
-        var x = event.pageX - 0,
-            y = event.pageY - 100;
-        console.log(x);
-        console.log(y);
+        var x = event.pageX,
+            y = event.pageY;
+
 
         for (var i = that.balloons.length-1; i >= 0; i--) {
             if (that.balloons[i].collision(x,y)) {
@@ -81,25 +82,45 @@ Game.init = function() {
                 break;
             }
         }
-   });
+    });
+    this.fontSize = 30 * ratio ;
+    this.ctx.font = (this.fontSize|30) + "px Verdana";
+
+
+    // Create gradient
+    var gradient = this.ctx.createLinearGradient(0, 0, this.canvas.width, 0);
+
+    for (var i = 0; i < 1; i += 0.05) {
+
+        gradient.addColorStop(i, getRandomCssColor());
+
+    }
+    this.ctx.fillStyle = gradient;
+    this.ctx.fillText("Stop the balloons, before it is too late !!",this.canvas.width * 0.1,this.canvas.height * 0.15);
+
+    setTimeout(function() {
+        Game.clear();
+        setInterval(Game.run, 1000 / Game.fps);
+    }, 2000);
+
 }
 
-Game.resizeCanvas = function() {
-
-    INITY = this.canvas.height;
-    XMAX = this.canvas.width;
-
-
+function getRandomItem(set) {
+    let items = Array.from(cssKeywords);
+    return items[Math.floor(Math.random() * items.length)];
 }
 
 Game.randomBalloon = function() {
-    var xcoord = Math.floor(Math.random()*XMAX );
-    var ycoord = INITY;
+
+    var max_width = this.canvas.width;
+    var max_height = this.canvas.height;
+    var xcoord = Math.floor(Math.random()*(max_width*0.9) )+max_width*0.05;
+    var ycoord = max_height;
     var randomSize = 24+Math.floor(Math.random()*50);
 
     var getRandomRGB = function() { return  Math.floor(Math.random()*255) };
     var randomColor = { r : getRandomRGB(), g : getRandomRGB(), b : getRandomRGB() };
-    return balloonConstructor(xcoord, ycoord,randomSize , randomColor);
+    return balloonConstructor(xcoord, ycoord,randomSize , randomColor, max_width);
 
 }
 
@@ -120,47 +141,24 @@ Game.tick = function() {
     for (var i in this.balloons) {
         this.balloons[i].tick();
     }
+
 }
 
 Game.draw = function() {
     for (var i in this.balloons) {
         this.balloons[i].draw();
     }
+    if (this.ctx) {
+        this.ctx.fillText(this.balloons_caught, this.canvas.width * 0.1, this.canvas.height * 0.1)
+        this.ctx.fillText(this.lostBalloons, this.canvas.width * 0.8, this.canvas.height * 0.1)
+    }
 
 };
 
 Game.clear = function() {
     var self = this;
-    self.ctx = self.canvas.getContext('2d');
-    self.ctx.clearRect( 0, 0, XMAX, INITY);
-}
-    /*
-
-    Game.clear = function() {
-        var self = this;
-        if (null == self.canvasbackup) {
-            var tmpcanvas = self.canvas.clone(true);
-            self.canvasbackup = self.canvas;
-            self.canvas=tmpcanvas;
-        } else {
-            var tmpcanvas = self.canvasbackup;
-            self.canvasbackup = self.canvas;
-            self.canvas=tmpcanvas;
-        }
-        self.ctx = self.canvas[0].getContext('2d');
-        self.ctx.clearRect( 0, 0, 1000, 460);
-    }
-    */
-Game.inDOM =  function() {
-    var self = this;
-    if(null==self.canvasbackup) {
-        self.canvas.appendTo(self.div);
-        //self.div.appendTo(self.container);
-    } else {
-        //self.connectHuman();
-        self.canvasbackup.remove();
-        self.canvas.appendTo(self.div);
-    }
+    self.ctx.clearRect( 0, 0, self.canvas.width, self.canvas.height);
+    self.ctx.clearRect( 0, 0, self.canvas.width, self.canvas.height);
 }
 
 
@@ -170,7 +168,7 @@ Game.update = function() {
     self.clear();
     self.tick();
     self.draw();
-//    self.inDOM();
+
 
 };
 Game.run = function() {

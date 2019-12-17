@@ -33,9 +33,8 @@ var balloonConstructor = function(xcoord, ycoord, size, color, xmax) {
     }
 
     that.collision = function(x,y) {
-        var xdelta = x-this.xcoord;
-        var ydelta = y-this.ycoord;
-        return Math.sqrt(xdelta*xdelta+ydelta*ydelta) < this.size+5;
+        var balloon = new CANVASBALLOON.Balloon('balloon_canvas', this.xcoord, this.ycoord, this.size, this.color);
+        return balloon.check_hit(x,y)
 
     }
     return that;
@@ -73,13 +72,13 @@ Game.init = function() {
         var x = event.pageX,
             y = event.pageY;
 
-
         for (var i = that.balloons.length-1; i >= 0; i--) {
-            if (that.balloons[i].collision(x,y)) {
-                that.balloons.splice(i,1);
-                that.balloons_caught++;
-                $('#caught_balloon_counter').html(that.balloons_caught);
-                break;
+            if (x && y) {
+                if (that.balloons[i].collision(x,y)) {
+                    that.balloons.splice(i, 1);
+                    that.balloons_caught++;
+                    break;
+                }
             }
         }
     });

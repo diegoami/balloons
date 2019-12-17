@@ -39,6 +39,27 @@ CANVASBALLOON.Balloon = function(canvasElementID, centerX, centerY, radius, colo
     this.lightColor = (new Color(color)).lighten(CANVASBALLOON.GRADIENT_FACTOR);
 }
 
+CANVASBALLOON.Balloon.prototype.check_hit = function(last_x, last_y) {
+    var centerX = this.centerX;
+    var centerY = this.centerY;
+    var radius = this.radius;
+
+    var handleLength = CANVASBALLOON.KAPPA * radius;
+
+    var widthDiff = (radius * CANVASBALLOON.WIDTH_FACTOR);
+    var heightDiff = (radius * CANVASBALLOON.HEIGHT_FACTOR);
+
+    var balloonBottomY = centerY + radius + heightDiff;
+
+    var collision = Math.abs(last_x - centerX) <= radius
+        && (
+            ((last_y <= centerY) && (centerY - last_y <= radius)) ||
+            ((centerY <= last_y) && (centerY - last_y <= radius + heightDiff))
+        );
+
+    return collision;
+}
+
 /**
  * Draws the balloon on the canvas
  */
@@ -70,6 +91,7 @@ CANVASBALLOON.Balloon.prototype.draw = function() {
     var topLeftCurveEndX = centerX;
     var topLeftCurveEndY = centerY - radius;
 
+
     gfxContext.moveTo(topLeftCurveStartX, topLeftCurveStartY);
     gfxContext.bezierCurveTo(topLeftCurveStartX, topLeftCurveStartY - handleLength - widthDiff,
         topLeftCurveEndX - handleLength, topLeftCurveEndY,
@@ -83,6 +105,7 @@ CANVASBALLOON.Balloon.prototype.draw = function() {
     var topRightCurveEndX = centerX + radius;
     var topRightCurveEndY = centerY;
 
+
     gfxContext.bezierCurveTo(topRightCurveStartX + handleLength + widthDiff, topRightCurveStartY,
         topRightCurveEndX, topRightCurveEndY - handleLength,
         topRightCurveEndX, topRightCurveEndY);
@@ -94,6 +117,7 @@ CANVASBALLOON.Balloon.prototype.draw = function() {
 
     var bottomRightCurveEndX = centerX;
     var bottomRightCurveEndY = balloonBottomY;
+
 
     gfxContext.bezierCurveTo(bottomRightCurveStartX, bottomRightCurveStartY + handleLength,
         bottomRightCurveEndX + handleLength, bottomRightCurveEndY,
@@ -140,4 +164,5 @@ CANVASBALLOON.Balloon.prototype.draw = function() {
         centerX + halfTieWidth, balloonBottomY + tieHeight);
     gfxContext.lineTo(centerX + 1, balloonBottomY);
     gfxContext.fill();
+
 }

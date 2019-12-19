@@ -96,9 +96,11 @@ Game.init = function() {
     }
     this.ctx.fillStyle = gradient;
     this.ctx.fillText("Stop the balloons, before it is too late !!",this.canvas.width * 0.1,this.canvas.height * 0.15);
+    that = this;
 
     setTimeout(function() {
         Game.clear();
+        that.start = Date.now();
         setInterval(Game.run, 1000 / Game.fps);
     }, 2000);
 
@@ -148,8 +150,9 @@ Game.draw = function() {
         this.balloons[i].draw();
     }
     if (this.ctx) {
-        this.ctx.fillText(this.balloons_caught, this.canvas.width * 0.1, this.canvas.height * 0.1)
-        this.ctx.fillText(this.lostBalloons, this.canvas.width * 0.8, this.canvas.height * 0.1)
+        this.ctx.fillText(this.balloons_caught + "/" +this.lostBalloons, this.canvas.width * 0.1, this.canvas.height * 0.1)
+        var time_to_show = ((Date.now() - this.start) / 1000).toFixed(2);
+        this.ctx.fillText(time_to_show, this.canvas.width * 0.8, this.canvas.height * 0.1)
     }
 
 };

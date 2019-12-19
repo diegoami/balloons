@@ -7,5 +7,5 @@ canvas { display:block; } /* To remove the scrollbars */
 #balloon_canvas {
     background:url('sky_3.jpeg');
     background-size: cover;
-
+    cursor: crosshair;
 }

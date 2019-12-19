@@ -1,240 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="290b8e7f-d115-4585-8ab3-6640be851363" name="Default" comment="" />
-    <ignored path="ballons.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <option name="TRACKING_ENABLED" value="true" />
+    <list default="true" id="290b8e7f-d115-4585-8ab3-6640be851363" name="Default" comment="ps">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/game.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ballons.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ballons.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="120" selection-start="765" selection-end="765" vertical-scroll-proportion="0.70877945">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="41" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sky.jpg" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/sky.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sky.jpg" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/sky.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery-1.8.2.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/jquery-1.8.2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="htmlballoons.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/htmlballoons.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="836" selection-end="849" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="color.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/color.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1201" column="0" selection-start="35563" selection-end="35563" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="14" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="changedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/scripts.js" />
-        <option value="$PROJECT_DIR$/scripts/color.js" />
-        <option value="$PROJECT_DIR$/scripts/htmlballoons.js" />
-        <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/scripts/game.js" />
-        <option value="$PROJECT_DIR$/ballons.html" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
+  <component name="ProjectId" id="1V2RNCDnKSjj4OAHSAd0TlYk9qa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents ProjectPane="true" />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ballons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ballons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ballons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ballons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ballons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ballons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ballons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ballons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ballons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="D:\develop\gitrepo\ballons\scripts" />
       <recent name="D:\develop\gitrepo\ballons\css" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css" />
+    </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.ballons.html">
-    <configuration default="false" name="ballons.html" type="JavascriptDebugSession" factoryName="Local" temporary="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
-        <option name="fileUrl" value="file://$PROJECT_DIR$/ballons.html" />
-      </JSDebuggerConfigurationSettings>
-      <RunnerSettings RunnerId="JavascriptDebugRunner" />
-      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.ballons.html (1)">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
       <JSDebuggerConfigurationSettings>
         <option name="engineId" />
@@ -242,159 +70,238 @@
       </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.ballons.html" />
-    </list>
+    <configuration name="ballons.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ballons/ballons.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="ballons.html" type="JavascriptDebugType" temporary="true" uri="file://$PROJECT_DIR$/ballons.html">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.ballons.html" />
+      <list>
+        <item itemvalue="JavaScript Debug.ballons.html (1)" />
+        <item itemvalue="JavaScript Debug.ballons.html" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="290b8e7f-d115-4585-8ab3-6640be851363" name="Default" comment="" />
       <created>1354476325098</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1354476325098</updated>
+      <workItem from="1501392692299" duration="46000" />
+      <workItem from="1502567586276" duration="106000" />
+      <workItem from="1502567704179" duration="1852000" />
+      <workItem from="1502665920939" duration="55000" />
+      <workItem from="1576449162560" duration="3116000" />
+      <workItem from="1576596575315" duration="5267000" />
+      <workItem from="1576604118571" duration="1752000" />
+      <workItem from="1576605889389" duration="7799000" />
+      <workItem from="1576616983843" duration="3057000" />
+      <workItem from="1576745412602" duration="15455000" />
     </task>
+    <task id="LOCAL-00001" summary="Balloons - resolution">
+      <created>1502568944402</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1502568944402</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Color schemas created">
+      <created>1576606108272</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576606108272</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Version moved to 0.0.3">
+      <created>1576606294160</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576606294160</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Correct detection of collision">
+      <created>1576615834418</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1576615834418</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add crosshair, timer">
+      <created>1576747842166</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1576747842166</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Ballons Generic">
+      <created>1576764895799</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576764895799</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24984913" sideWeight="0.6004619" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995381" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-    </layout>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
-    <option name="myTodoPanelSettings">
-      <value>
-        <are-packages-shown value="false" />
-        <are-modules-shown value="false" />
-        <flatten-packages value="false" />
-        <is-autoscroll-to-source value="false" />
-      </value>
-    </option>
-    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
-    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
-    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
-    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
-    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
-    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
-    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
-    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
-    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
-    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
-    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
-    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
-    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
-    <option name="ACTIVE_VCS_NAME" />
-    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
-    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
-    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
-    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Balloons - resolution" />
+    <MESSAGE value="Color schemas created" />
+    <MESSAGE value="Version moved to 0.0.3" />
+    <MESSAGE value="Correct detection of collision" />
+    <MESSAGE value="Add crosshair, timer" />
+    <MESSAGE value="Ballons Generic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ballons Generic" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="730" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576745499397">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="730" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1576745499397" />
+    <state x="574" y="135" width="835" height="805" key="CommitChangelistDialog2" timestamp="1576767481317">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="574" y="135" width="835" height="805" key="CommitChangelistDialog2/65.24.1855.1056@65.24.1855.1056" timestamp="1576767481317" />
+    <state x="250" y="102" key="DiffContextDialog" timestamp="1576615622538">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="250" y="102" key="DiffContextDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1576615622538" />
+    <state width="1832" height="385" key="GridCell.Tab.0.bottom" timestamp="1576767352717">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.0.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352717" />
+    <state width="1832" height="385" key="GridCell.Tab.0.center" timestamp="1576767352716">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.0.center/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352716" />
+    <state width="1832" height="385" key="GridCell.Tab.0.left" timestamp="1576767352716">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.0.left/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352716" />
+    <state width="1832" height="385" key="GridCell.Tab.0.right" timestamp="1576767352717">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.0.right/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352717" />
+    <state width="1832" height="385" key="GridCell.Tab.1.bottom" timestamp="1576767352804">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.1.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352804" />
+    <state width="1832" height="385" key="GridCell.Tab.1.center" timestamp="1576767352804">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.1.center/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352804" />
+    <state width="1832" height="385" key="GridCell.Tab.1.left" timestamp="1576767352804">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.1.left/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352804" />
+    <state width="1832" height="385" key="GridCell.Tab.1.right" timestamp="1576767352804">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.1.right/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352804" />
+    <state width="1832" height="385" key="GridCell.Tab.2.bottom" timestamp="1576767352645">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.2.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
+    <state width="1832" height="385" key="GridCell.Tab.2.center" timestamp="1576767352645">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.2.center/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
+    <state width="1832" height="385" key="GridCell.Tab.2.left" timestamp="1576767352645">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.2.left/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
+    <state width="1832" height="385" key="GridCell.Tab.2.right" timestamp="1576767352645">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.2.right/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
+    <state width="1832" height="385" key="GridCell.Tab.3.bottom" timestamp="1576767352646">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.3.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352646" />
+    <state width="1832" height="385" key="GridCell.Tab.3.center" timestamp="1576767352645">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.3.center/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
+    <state width="1832" height="385" key="GridCell.Tab.3.left" timestamp="1576767352645">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.3.left/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
+    <state width="1832" height="385" key="GridCell.Tab.3.right" timestamp="1576767352646">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state width="1832" height="385" key="GridCell.Tab.3.right/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352646" />
+    <state x="1617" y="457" key="VCS.ChangelistChooser" timestamp="1576764904692">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="1617" y="457" key="VCS.ChangelistChooser/65.24.1855.1056@65.24.1855.1056" timestamp="1576764904692" />
+    <state x="592" y="263" key="Vcs.Push.Dialog.v2" timestamp="1576764897223">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="592" y="263" key="Vcs.Push.Dialog.v2/65.24.1855.1056@65.24.1855.1056" timestamp="1576764897223" />
+    <state x="640" y="275" width="704" height="526" key="find.popup" timestamp="1576752218245">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="640" y="275" width="704" height="526" key="find.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1576752218245" />
+    <state x="655" y="246" key="run.anything.popup" timestamp="1576749590700">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="655" y="246" key="run.anything.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1576749590700" />
+    <state x="655" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1576614428994">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="655" y="236" width="672" height="678" key="search.everywhere.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1576614428994" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/scripts/game.js</url>
+          <line>62</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+      </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/sky.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/sky.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/color.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1201" column="0" selection-start="35563" selection-end="35563" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="14" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/jquery-1.8.2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="41" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/htmlballoons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="836" selection-end="849" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ballons.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="120" selection-start="765" selection-end="765" vertical-scroll-proportion="0.70877945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <watches-manager>
+      <configuration name="JavascriptDebugType">
+        <watch expression="Object.keys(cssKeywords)" language="JavaScript" />
+        <watch expression="canvas_ratio_x" language="JavaScript" />
+        <watch expression="canvas_ratio_y" language="JavaScript" />
+        <watch expression="Game.ratio" language="JavaScript" />
+        <watch expression="bounding_rect.width / sender.width" language="JavaScript" />
+        <watch expression="x" language="JavaScript" />
+        <watch expression="sender.width" language="JavaScript" />
+        <watch expression="bounding_rect.width" language="JavaScript" />
+        <watch expression="x * canvas_ratio" language="JavaScript" />
+        <watch expression="y" language="JavaScript" />
+        <watch expression="that.balloons[i]" language="JavaScript" />
+        <watch expression="x /canvas_ratio" language="JavaScript" />
+        <watch expression="balloonFrequency" language="JavaScript" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
-

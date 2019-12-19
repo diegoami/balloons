@@ -1,14 +1,17 @@
 
+BALLOON_FREQUENCY = 0.1;
+BALLOON_SPEED = 5;
+MAX_BALLOONS = 200;
+RATIO_SIZE = 1;
 
-
-var balloonConstructor = function(xcoord, ycoord, size, color, xmax) {
+var balloonConstructor = function(xcoord, ycoord, size, color, xmax, speed) {
     var that;
     that = new Object();
     that.xcoord = xcoord ;
     that.ycoord = ycoord ;
     that.size = size;
     that.color = color;
-    that.delta = -1 * ((Math.random()*3.4)+0.25);
+    that.delta = -1 * ((Math.random()*speed)+0.25);
     that.xdelta = -.5+ Math.random();
     that.xmax = xmax;
 
@@ -23,6 +26,7 @@ var balloonConstructor = function(xcoord, ycoord, size, color, xmax) {
         }
 
     }
+
 
     that.draw = function(canvas) {
         if (this.ycoord > -100) {
@@ -43,12 +47,40 @@ var balloonConstructor = function(xcoord, ycoord, size, color, xmax) {
 
 
 var Game = { };
-Game.fps = 50;
+Game.fps = 30;
 var css_items = Object.keys(cssKeywords);
 
 function getRandomCssColor() {
-
     return css_items[Math.floor(Math.random() * css_items.length)];
+}
+
+
+Game.do_click = function() {
+
+    var that = this;
+    $('#balloon_canvas').click( function(event) {
+        var sender = event.target;
+        var bounding_rect = sender.getBoundingClientRect();
+        var canvas_ratio_x = bounding_rect.width / sender.width;
+        var canvas_ratio_y = bounding_rect.height / sender.height;
+
+  //      var x = event.clientX / canvas_ratio_x,
+  //          y = event.clientY / canvas_ratio_y;
+
+        var x = event.clientX / canvas_ratio_x,
+            y = event.clientY / canvas_ratio_y;
+        var caught
+        if (x && y) {
+            for (var i = that.balloons.length - 1; i >= 0; i--) {
+
+                if (that.balloons[i].collision(x , y)) {
+                    that.balloons.splice(i, 1);
+                    that.balloons_caught++;
+                    break;
+                }
+            }
+        }
+    });
 }
 
 Game.init = function() {
@@ -60,29 +92,17 @@ Game.init = function() {
     this.canvas.height = window.innerHeight;
     this.ctx = this.canvas.getContext('2d');
 
-    ratio = this.canvas.width / 1000;
+    this.ratio = this.old_ratio = this.canvas.width / 1000;
+    this.event_ratio = 1
 
     this.div = $('#div_canvas');
     this.balloons = [];
     this.balloons_caught = 0;
     this.lostBalloons = 0;
 
-    var that = this;
-    $('#balloon_canvas').click( function(event) {
-        var x = event.pageX,
-            y = event.pageY;
+    this.do_click();
 
-        for (var i = that.balloons.length-1; i >= 0; i--) {
-            if (x && y) {
-                if (that.balloons[i].collision(x,y)) {
-                    that.balloons.splice(i, 1);
-                    that.balloons_caught++;
-                    break;
-                }
-            }
-        }
-    });
-    this.fontSize = 30 * ratio ;
+    this.fontSize = 30 * this.ratio ;
     this.ctx.font = (this.fontSize|30) + "px Verdana";
 
 
@@ -111,21 +131,31 @@ function getRandomItem(set) {
     return items[Math.floor(Math.random() * items.length)];
 }
 
+Game.gameover = function() {
+
+}
+
 Game.randomBalloon = function() {
 
     var max_width = this.canvas.width;
     var max_height = this.canvas.height;
-    var xcoord = Math.floor(Math.random()*(max_width*0.9) )+max_width*0.05;
+    var xcoord = (Math.floor(Math.random()*(max_width*0.9) )+max_width*0.05);
     var ycoord = max_height;
-    var randomSize = 24+Math.floor(Math.random()*50);
+    var ratioSize = RATIO_SIZE - this.balloons_caught / 300 + this.lostBalloons / 180;
+    console.log("Ratio Size: %f", ratioSize )
+    var randomSize = (24+Math.floor(Math.random()*50))*this.ratio*ratioSize;
 
     var getRandomRGB = function() { return  Math.floor(Math.random()*255) };
     var randomColor = { r : getRandomRGB(), g : getRandomRGB(), b : getRandomRGB() };
-    return balloonConstructor(xcoord, ycoord,randomSize , randomColor, max_width);
+    var balloonSpeed = BALLOON_SPEED + this.balloons_caught / 100 - this.lostBalloons / 60;
+    console.log("Balloon Speed: %f", balloonSpeed )
+    return balloonConstructor(xcoord, ycoord,randomSize , randomColor, max_width, balloonSpeed);
 
 }
 
+
 Game.tick = function() {
+
     for (var i = 0; i < this.balloons.length; i++) {
         if (this.balloons[i].ycoord < -50) {
             this.balloons.splice(i,1);
@@ -135,7 +165,12 @@ Game.tick = function() {
         }
     }
 
-    if (Math.random() < 0.03) {
+
+
+    var balloonFrequency = BALLOON_FREQUENCY - 0.0015 * this.balloons.length;
+
+    if (Math.random() < balloonFrequency && this.balloons.length < MAX_BALLOONS) {
+        console.log("Balloon Frequency: %f", balloonFrequency )
         this.balloons.push(this.randomBalloon());
     }
 
@@ -180,10 +215,7 @@ Game.run = function() {
 }
 
 
-
-
 window.addEventListener('load', function () {
     Game.init();
 }, false);
-
 

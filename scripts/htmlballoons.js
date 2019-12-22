@@ -37,7 +37,7 @@ CANVASBALLOON.Balloon = function(canvasElementID, centerX, centerY, radius, colo
     this.baseColor = new Color(color);
     this.darkColor = (new Color(color)).darken(CANVASBALLOON.GRADIENT_FACTOR);
     this.lightColor = (new Color(color)).lighten(CANVASBALLOON.GRADIENT_FACTOR);
-}
+};
 
 CANVASBALLOON.Balloon.prototype.check_hit = function(last_x, last_y) {
     var centerX = this.centerX;
@@ -58,7 +58,7 @@ CANVASBALLOON.Balloon.prototype.check_hit = function(last_x, last_y) {
         );
 
     return collision;
-}
+};
 
 /**
  * Draws the balloon on the canvas
@@ -165,4 +165,4 @@ CANVASBALLOON.Balloon.prototype.draw = function() {
     gfxContext.lineTo(centerX + 1, balloonBottomY);
     gfxContext.fill();
 
-}
+};

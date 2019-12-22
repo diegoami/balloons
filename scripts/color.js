@@ -150,7 +150,7 @@ var cssKeywords = {
 };
 
 
-(function(){var global = this;function debug(){return debug};function require(p, parent){ var path = require.resolve(p) , mod = require.modules[path]; if (!mod) throw new Error('failed to require "' + p + '" from ' + parent); if (!mod.exports) { mod.exports = {}; mod.call(mod.exports, mod, mod.exports, require.relative(path), global); } return mod.exports;}require.modules = {};require.resolve = function(path){ var orig = path , reg = path + '.js' , index = path + '/index.js'; return require.modules[reg] && reg || require.modules[index] && index || orig;};require.register = function(path, fn){ require.modules[path] = fn;};require.relative = function(parent) { return function(p){ if ('debug' == p) return debug; if ('.' != p.charAt(0)) return require(p); var path = parent.split('/') , segs = p.split('/'); path.pop(); for (var i = 0; i < segs.length; i++) { var seg = segs[i]; if ('..' == seg) path.pop(); else if ('.' != seg) path.push(seg); } return require(path.join('/'), parent); };};require.register("color.js", function(module, exports, require, global){
+(function(){var global = this;function debug(){return debug}function require(p, parent){ var path = require.resolve(p) , mod = require.modules[path]; if (!mod) throw new Error('failed to require "' + p + '" from ' + parent); if (!mod.exports) { mod.exports = {}; mod.call(mod.exports, mod, mod.exports, require.relative(path), global); } return mod.exports;}require.modules = {};require.resolve = function(path){ var orig = path , reg = path + '.js' , index = path + '/index.js'; return require.modules[reg] && reg || require.modules[index] && index || orig;};require.register = function(path, fn){ require.modules[path] = fn;};require.relative = function(parent) { return function(p){ if ('debug' == p) return debug; if ('.' != p.charAt(0)) return require(p); var path = parent.split('/') , segs = p.split('/'); path.pop(); for (var i = 0; i < segs.length; i++) { var seg = segs[i]; if ('..' == seg) path.pop(); else if ('.' != seg) path.push(seg); } return require(path.join('/'), parent); };};require.register("color.js", function(module, exports, require, global){
     /* MIT license */
     var convert = require("color-convert"),
         string = require("color-string");
@@ -166,7 +166,7 @@ var cssKeywords = {
             hsv: [0, 0, 0],
             cmyk: [0, 0, 0, 0],
             alpha: 1
-        }
+        };
 
         // parse Color() argument
         if (typeof cssString == "string") {
@@ -193,7 +193,7 @@ var cssKeywords = {
                 this.setValues("cmyk", vals)
             }
         }
-    }
+    };
 
     Color.prototype = {
         rgb: function (vals) {
@@ -316,7 +316,7 @@ var cssKeywords = {
             var lum2 = color2.luminosity();
             if (lum1 > lum2) {
                 return (lum1 + 0.05) / (lum2 + 0.05)
-            };
+            }
             return (lum2 + 0.05) / (lum1 + 0.05);
         },
 
@@ -332,7 +332,7 @@ var cssKeywords = {
         },
 
         negate: function() {
-            var rgb = []
+            var rgb = [];
             for (var i = 0; i < 3; i++) {
                 rgb[i] = 255 - this.values.rgb[i];
             }
@@ -419,7 +419,7 @@ var cssKeywords = {
         toJSON: function() {
             return this.rgb();
         }
-    }
+    };
 
 
     Color.prototype.getValues = function(space) {
@@ -432,7 +432,7 @@ var cssKeywords = {
         }
         // {r: 255, g: 255, b: 255, a: 0.4}
         return vals;
-    }
+    };
 
     Color.prototype.setValues = function(space, vals) {
         var spaces = {
@@ -491,7 +491,7 @@ var cssKeywords = {
             }
         }
         return true;
-    }
+    };
 
     Color.prototype.setSpace = function(space, args) {
         var vals = args[0];
@@ -505,7 +505,7 @@ var cssKeywords = {
         }
         this.setValues(space, vals);
         return this;
-    }
+    };
 
     Color.prototype.setChannel = function(space, index, val) {
         if (val === undefined) {
@@ -537,7 +537,7 @@ var cssKeywords = {
         hslString: hslString,
         hslaString: hslaString,
         keyword: keyword
-    }
+    };
 
     function getRgba(string) {
         if (!string) {
@@ -701,7 +701,7 @@ var cssKeywords = {
 
     var convert = function() {
         return new Converter();
-    }
+    };
 
     for (var func in conversions) {
         // export Raw versions
@@ -732,7 +732,7 @@ var cssKeywords = {
                     return val; // keyword
                 }
 
-                round(val)
+                round(val);
                 return val;
             }
         })(func);
@@ -793,7 +793,7 @@ var cssKeywords = {
         for (var i = 0; i < val.length; i++) {
             val[i] = Math.round(val[i]);
         }
-    };
+    }
 
     ["rgb", "hsl", "hsv", "cmyk", "keyword"].forEach(function(space) {
         Converter.prototype[space] = function(vals) {
@@ -839,7 +839,7 @@ var cssKeywords = {
         xyz2lab: xyz2lab,
 
         lab2xyz: lab2xyz,
-    }
+    };
 
 
     function rgb2hsl(rgb) {

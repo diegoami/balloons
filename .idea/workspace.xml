@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="290b8e7f-d115-4585-8ab3-6640be851363" name="Default" comment="ps">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="290b8e7f-d115-4585-8ab3-6640be851363" name="Default" comment="Game over added">
+      <change afterPath="$PROJECT_DIR$/scripts/gameballoons.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ballons.html" beforeDir="false" afterPath="$PROJECT_DIR$/ballons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/color.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/color.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/game.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +53,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="recentsLimit" value="5" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -116,7 +119,10 @@
       <workItem from="1576604118571" duration="1752000" />
       <workItem from="1576605889389" duration="7799000" />
       <workItem from="1576616983843" duration="3057000" />
-      <workItem from="1576745412602" duration="15455000" />
+      <workItem from="1576745412602" duration="21266000" />
+      <workItem from="1577010119461" duration="6956000" />
+      <workItem from="1577019045284" duration="1582000" />
+      <workItem from="1577032738901" duration="7972000" />
     </task>
     <task id="LOCAL-00001" summary="Balloons - resolution">
       <created>1502568944402</created>
@@ -160,7 +166,21 @@
       <option name="project" value="LOCAL" />
       <updated>1576764895799</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Game over added">
+      <created>1576767503598</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1576767503598</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Allow choosing difficulty clicking on text">
+      <created>1577018997248</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1577018997248</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,132 +195,144 @@
     <MESSAGE value="Correct detection of collision" />
     <MESSAGE value="Add crosshair, timer" />
     <MESSAGE value="Ballons Generic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ballons Generic" />
+    <MESSAGE value="Game over added" />
+    <MESSAGE value="Allow choosing difficulty clicking on text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow choosing difficulty clicking on text" />
   </component>
   <component name="WindowStateProjectService">
     <state x="730" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576745499397">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="730" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1576745499397" />
-    <state x="574" y="135" width="835" height="805" key="CommitChangelistDialog2" timestamp="1576767481317">
+    <state x="731" y="395" width="520" height="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1577011522576">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="574" y="135" width="835" height="805" key="CommitChangelistDialog2/65.24.1855.1056@65.24.1855.1056" timestamp="1576767481317" />
+    <state x="731" y="395" width="520" height="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/65.24.1855.1056@65.24.1855.1056" timestamp="1577011522576" />
+    <state x="574" y="135" width="835" height="805" key="CommitChangelistDialog2" timestamp="1577018997154">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="574" y="135" width="835" height="805" key="CommitChangelistDialog2/65.24.1855.1056@65.24.1855.1056" timestamp="1577018997154" />
     <state x="250" y="102" key="DiffContextDialog" timestamp="1576615622538">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
     <state x="250" y="102" key="DiffContextDialog/65.24.1855.1056@65.24.1855.1056" timestamp="1576615622538" />
-    <state width="1832" height="385" key="GridCell.Tab.0.bottom" timestamp="1576767352717">
+    <state x="779" y="297" width="424" height="482" key="FileChooserDialogImpl" timestamp="1577024538203">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.0.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352717" />
-    <state width="1832" height="385" key="GridCell.Tab.0.center" timestamp="1576767352716">
+    <state x="779" y="297" width="424" height="482" key="FileChooserDialogImpl/65.24.1855.1056@65.24.1855.1056" timestamp="1577024538203" />
+    <state width="1832" height="385" key="GridCell.Tab.0.bottom" timestamp="1577044327233">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.0.center/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352716" />
-    <state width="1832" height="385" key="GridCell.Tab.0.left" timestamp="1576767352716">
+    <state width="1832" height="385" key="GridCell.Tab.0.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327233" />
+    <state width="1832" height="385" key="GridCell.Tab.0.center" timestamp="1577044327233">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.0.left/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352716" />
-    <state width="1832" height="385" key="GridCell.Tab.0.right" timestamp="1576767352717">
+    <state width="1832" height="385" key="GridCell.Tab.0.center/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327233" />
+    <state width="1832" height="385" key="GridCell.Tab.0.left" timestamp="1577044327233">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.0.right/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352717" />
-    <state width="1832" height="385" key="GridCell.Tab.1.bottom" timestamp="1576767352804">
+    <state width="1832" height="385" key="GridCell.Tab.0.left/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327233" />
+    <state width="1832" height="385" key="GridCell.Tab.0.right" timestamp="1577044327233">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.1.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352804" />
-    <state width="1832" height="385" key="GridCell.Tab.1.center" timestamp="1576767352804">
+    <state width="1832" height="385" key="GridCell.Tab.0.right/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327233" />
+    <state width="1832" height="385" key="GridCell.Tab.1.bottom" timestamp="1577044327378">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.1.center/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352804" />
-    <state width="1832" height="385" key="GridCell.Tab.1.left" timestamp="1576767352804">
+    <state width="1832" height="385" key="GridCell.Tab.1.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327378" />
+    <state width="1832" height="385" key="GridCell.Tab.1.center" timestamp="1577044327377">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.1.left/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352804" />
-    <state width="1832" height="385" key="GridCell.Tab.1.right" timestamp="1576767352804">
+    <state width="1832" height="385" key="GridCell.Tab.1.center/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327377" />
+    <state width="1832" height="385" key="GridCell.Tab.1.left" timestamp="1577044327377">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.1.right/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352804" />
-    <state width="1832" height="385" key="GridCell.Tab.2.bottom" timestamp="1576767352645">
+    <state width="1832" height="385" key="GridCell.Tab.1.left/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327377" />
+    <state width="1832" height="385" key="GridCell.Tab.1.right" timestamp="1577044327377">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.2.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
-    <state width="1832" height="385" key="GridCell.Tab.2.center" timestamp="1576767352645">
+    <state width="1832" height="385" key="GridCell.Tab.1.right/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327377" />
+    <state width="1832" height="385" key="GridCell.Tab.2.bottom" timestamp="1577044327167">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.2.center/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
-    <state width="1832" height="385" key="GridCell.Tab.2.left" timestamp="1576767352645">
+    <state width="1832" height="385" key="GridCell.Tab.2.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327167" />
+    <state width="1832" height="385" key="GridCell.Tab.2.center" timestamp="1577044327167">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.2.left/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
-    <state width="1832" height="385" key="GridCell.Tab.2.right" timestamp="1576767352645">
+    <state width="1832" height="385" key="GridCell.Tab.2.center/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327167" />
+    <state width="1832" height="385" key="GridCell.Tab.2.left" timestamp="1577044327167">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.2.right/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
-    <state width="1832" height="385" key="GridCell.Tab.3.bottom" timestamp="1576767352646">
+    <state width="1832" height="385" key="GridCell.Tab.2.left/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327167" />
+    <state width="1832" height="385" key="GridCell.Tab.2.right" timestamp="1577044327167">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.3.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352646" />
-    <state width="1832" height="385" key="GridCell.Tab.3.center" timestamp="1576767352645">
+    <state width="1832" height="385" key="GridCell.Tab.2.right/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327167" />
+    <state width="1832" height="385" key="GridCell.Tab.3.bottom" timestamp="1577044327168">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.3.center/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
-    <state width="1832" height="385" key="GridCell.Tab.3.left" timestamp="1576767352645">
+    <state width="1832" height="385" key="GridCell.Tab.3.bottom/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327168" />
+    <state width="1832" height="385" key="GridCell.Tab.3.center" timestamp="1577044327167">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.3.left/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352645" />
-    <state width="1832" height="385" key="GridCell.Tab.3.right" timestamp="1576767352646">
+    <state width="1832" height="385" key="GridCell.Tab.3.center/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327167" />
+    <state width="1832" height="385" key="GridCell.Tab.3.left" timestamp="1577044327167">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state width="1832" height="385" key="GridCell.Tab.3.right/65.24.1855.1056@65.24.1855.1056" timestamp="1576767352646" />
-    <state x="1617" y="457" key="VCS.ChangelistChooser" timestamp="1576764904692">
+    <state width="1832" height="385" key="GridCell.Tab.3.left/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327167" />
+    <state width="1832" height="385" key="GridCell.Tab.3.right" timestamp="1577044327167">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="1617" y="457" key="VCS.ChangelistChooser/65.24.1855.1056@65.24.1855.1056" timestamp="1576764904692" />
-    <state x="592" y="263" key="Vcs.Push.Dialog.v2" timestamp="1576764897223">
+    <state width="1832" height="385" key="GridCell.Tab.3.right/65.24.1855.1056@65.24.1855.1056" timestamp="1577044327167" />
+    <state x="1617" y="457" key="VCS.ChangelistChooser" timestamp="1577019007396">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="592" y="263" key="Vcs.Push.Dialog.v2/65.24.1855.1056@65.24.1855.1056" timestamp="1576764897223" />
-    <state x="640" y="275" width="704" height="526" key="find.popup" timestamp="1576752218245">
+    <state x="1617" y="457" key="VCS.ChangelistChooser/65.24.1855.1056@65.24.1855.1056" timestamp="1577019007396" />
+    <state x="592" y="263" key="Vcs.Push.Dialog.v2" timestamp="1577018998785">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="640" y="275" width="704" height="526" key="find.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1576752218245" />
-    <state x="655" y="246" key="run.anything.popup" timestamp="1576749590700">
+    <state x="592" y="263" key="Vcs.Push.Dialog.v2/65.24.1855.1056@65.24.1855.1056" timestamp="1577018998785" />
+    <state x="640" y="275" width="704" height="536" key="find.popup" timestamp="1577042287166">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="655" y="246" key="run.anything.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1576749590700" />
-    <state x="655" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1576614428994">
+    <state x="640" y="275" width="704" height="536" key="find.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1577042287166" />
+    <state x="655" y="246" width="672" height="677" key="run.anything.popup" timestamp="1576769251881">
       <screen x="65" y="24" width="1855" height="1056" />
     </state>
-    <state x="655" y="236" width="672" height="678" key="search.everywhere.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1576614428994" />
+    <state x="655" y="246" width="672" height="677" key="run.anything.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1576769251881" />
+    <state x="655" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1577012291442">
+      <screen x="65" y="24" width="1855" height="1056" />
+    </state>
+    <state x="655" y="236" width="672" height="678" key="search.everywhere.popup/65.24.1855.1056@65.24.1855.1056" timestamp="1577012291442" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/scripts/game.js</url>
-          <line>62</line>
+          <url>file://$PROJECT_DIR$/scripts/color.js</url>
+          <line>156</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="46" />
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/scripts/game.js</url>
+          <line>233</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/scripts/game.js</url>
+          <line>193</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JavascriptDebugType">
-        <watch expression="Object.keys(cssKeywords)" language="JavaScript" />
-        <watch expression="canvas_ratio_x" language="JavaScript" />
-        <watch expression="canvas_ratio_y" language="JavaScript" />
-        <watch expression="Game.ratio" language="JavaScript" />
-        <watch expression="bounding_rect.width / sender.width" language="JavaScript" />
-        <watch expression="x" language="JavaScript" />
-        <watch expression="sender.width" language="JavaScript" />
-        <watch expression="bounding_rect.width" language="JavaScript" />
-        <watch expression="x * canvas_ratio" language="JavaScript" />
-        <watch expression="y" language="JavaScript" />
-        <watch expression="that.balloons[i]" language="JavaScript" />
-        <watch expression="x /canvas_ratio" language="JavaScript" />
-        <watch expression="balloonFrequency" language="JavaScript" />
+        <watch expression="css_items" language="JavaScript" />
+        <watch expression="url" language="JavaScript" />
+        <watch expression="score" language="JavaScript" />
       </configuration>
     </watches-manager>
   </component>

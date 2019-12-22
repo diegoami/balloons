@@ -150,6 +150,21 @@ var cssKeywords = {
 };
 
 
+var css_items = Object.keys(cssKeywords);
+var css_nb_items  = _.filter(css_items , function(elem) {
+    return cssKeywords[elem][2] < 200;
+});
+
+
+function getRandomItem(set) {
+    let items = Array.from(cssKeywords);
+    return items[Math.floor(Math.random() * items.length)];
+}
+
+function getRandomCssColor() {
+    return css_nb_items[Math.floor(Math.random() * css_nb_items.length)];
+}
+
 (function(){var global = this;function debug(){return debug}function require(p, parent){ var path = require.resolve(p) , mod = require.modules[path]; if (!mod) throw new Error('failed to require "' + p + '" from ' + parent); if (!mod.exports) { mod.exports = {}; mod.call(mod.exports, mod, mod.exports, require.relative(path), global); } return mod.exports;}require.modules = {};require.resolve = function(path){ var orig = path , reg = path + '.js' , index = path + '/index.js'; return require.modules[reg] && reg || require.modules[index] && index || orig;};require.register = function(path, fn){ require.modules[path] = fn;};require.relative = function(parent) { return function(p){ if ('debug' == p) return debug; if ('.' != p.charAt(0)) return require(p); var path = parent.split('/') , segs = p.split('/'); path.pop(); for (var i = 0; i < segs.length; i++) { var seg = segs[i]; if ('..' == seg) path.pop(); else if ('.' != seg) path.push(seg); } return require(path.join('/'), parent); };};require.register("color.js", function(module, exports, require, global){
     /* MIT license */
     var convert = require("color-convert"),

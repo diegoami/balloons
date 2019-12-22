@@ -4,15 +4,17 @@ var BALLOON_SPEED = 5.5;
 var MAX_BALLOONS = 20;
 var RATIO_SIZE = 1;
 var MAX_LOST_BALLOONS = 15;
-var ESCAPE_COORDS = -10;
+
 
 RATIO_DECREASE = 2000;
 SPEED_INCREASE = 500;
 SPEED_MODIFIER = 0.0015;
 DIFF_LEVEL = "E";
 
-const START_TEXT_BEGIN_X = 0.1;
-const START_TEXT_BEGIN_Y = 0.35;
+const START_TEXT_BEGIN_X = 0.05;
+const START_TEXT_INTRO_X = 0.05;
+const START_TEXT_INTRO_Y = 0.05;
+const START_TEXT_BEGIN_Y = 0.2;
 
 const DIFF_0 = "Select ", DIFF_1 = "E: Easy", DIFF_2 = "S: Standard", DIFF_3 = "H: Hard", DIFF_4 = "V: VHard";
 const DIFF_TOTAL = DIFF_0 + DIFF_1 + ", " + DIFF_2 + ", " + DIFF_3 + ", " + DIFF_4;
@@ -26,56 +28,17 @@ const DIFF_LENGTH_TOTAL = DIFF_TOTAL.length;
 const DEFAULT_FONT_SIZE = 30;
 
 
-var balloonConstructor = function(xcoord, ycoord, size, color, xmax, speed) {
-    var that;
-    that = {};
-    that.xcoord = xcoord ;
-    that.ycoord = ycoord ;
-    that.size = size;
-    that.color = color;
-    that.delta = -1 * ((Math.random()*speed)+0.25);
-    that.xdelta = -.5+ Math.random();
-    that.xmax = xmax;
 
-    that.tick = function(accelerate) {
-        if (accelerate) {
-            that.delta *= 1.01
-        }
-        that.ycoord = that.ycoord +that.delta;
-        that.xcoord = that.xcoord +that.xdelta;
-        if (that.xcoord < 0) {
-            that.xdelta = -that.xdelta;
-        }
-        if (that.xcoord > that.xmax) {
-            that.xdelta = -that.xdelta;
-        }
+const SCORE_URL = "http://localhost:5000/scores/highscores_bln_";
 
-    };
-
-    that.draw = function() {
-        if (this.ycoord > ESCAPE_COORDS) {
-            var balloon = new CANVASBALLOON.Balloon('balloon_canvas', this.xcoord, this.ycoord, this.size, this.color);
-            balloon.draw();
-        }
-    };
-
-    that.collision = function(x,y) {
-        var balloon = new CANVASBALLOON.Balloon('balloon_canvas', this.xcoord, this.ycoord, this.size, this.color);
-        return balloon.check_hit(x,y)
-
-    };
-    return that;
-};
 
 
 
 var Game = { };
 Game.fps = 30;
-var css_items = Object.keys(cssKeywords);
 
-function getRandomCssColor() {
-    return css_items[Math.floor(Math.random() * css_items.length)];
-}
+
+
 
 Game.do_click = function() {
     $(document).unbind();
@@ -133,6 +96,7 @@ Game.restart = function(diff_level) {
         clearInterval(this.tick_interval);
     }
     this.isrestart = false;
+    this.showscores = false;
     this.clear();
     this.balloons = [];
     this.balloons_caught = 0;
@@ -168,10 +132,11 @@ Game.init = function() {
         gradient.addColorStop(i, getRandomCssColor());
     }
     this.ctx.fillStyle = gradient;
-    this.ctx.fillText("Stop the balloons, before it is too late !!",this.canvas.width * 0.1,this.canvas.height * 0.15);
+    this.ctx.fillText("Stop the balloons, before it is too late !!",this.canvas.width * START_TEXT_INTRO_Y,this.canvas.height * START_TEXT_INTRO_X);
     this.diff_level = "E";
 
     this.ctx.fillText(DIFF_TOTAL,this.canvas.width * START_TEXT_BEGIN_X,this.canvas.height * START_TEXT_BEGIN_Y);
+    this.getScores();
     this.setDifficulty();
 };
 
@@ -221,13 +186,58 @@ Game.setDifficulty = function() {
     });
 };
 
-function getRandomItem(set) {
-    let items = Array.from(cssKeywords);
-    return items[Math.floor(Math.random() * items.length)];
+Game.fillscore = function(data) {
+    const SCORE_X_1 = 0.15, SCORE_X_2 = 0.65;
+    const SCORE_Y_1 = 0.5, SCORE_Y_2 = 0.65,  SCORE_Y_3 = 0.8;
+    that = this;
+    if (data) {
+        that.ctx.fillText("HIGH SCORES", that.canvas.width * 0.3, that.canvas.height * 0.37)
+
+        if (data.length > 0) {
+            that.ctx.fillText(data[0][0], that.canvas.width * SCORE_X_1, that.canvas.height * SCORE_Y_1)
+            that.ctx.fillText(data[0][1], that.canvas.width * SCORE_X_2, that.canvas.height * SCORE_Y_1)
+        }
+
+        if (data.length > 1) {
+            that.ctx.fillText(data[1][0], that.canvas.width * SCORE_X_1, that.canvas.height * SCORE_Y_2)
+            that.ctx.fillText(data[1][1], that.canvas.width * SCORE_X_2, that.canvas.height * SCORE_Y_2)
+        }
+
+        if (data.length > 2) {
+            that.ctx.fillText(data[2][0], that.canvas.width * SCORE_X_1, that.canvas.height * SCORE_Y_3)
+            that.ctx.fillText(data[2][1], that.canvas.width * SCORE_X_2, that.canvas.height * SCORE_Y_3)
+        }
+    }
+}
+
+Game.getScores = function() {
+
+    var url = SCORE_URL + this.diff_level.toLowerCase();
+    var start_y = 0.5
+    that = this
+    if (!this.scores) {
+        $.getJSON(url, null, function (data, err) {
+            that.scores = data;
+            that.fillscore(that.scores);
+        });
+    } else {
+        this.fillscore(that.scores);
+    }
+
+}
+
+Game.addscore = function(score) {
+    this.scores = undefined;
+    var url = SCORE_URL + this.diff_level.toLowerCase();
+    that = this;
+    $.post(url, {"score" :  score , "name" : "Diego"} , function() {
+        that.getScores();
+    },  "json");
 }
 
 Game.gameover = function() {
     if (!this.isrestart) {
+        this.addscore(this.balloons_caught);
         $('#balloon_canvas').unbind('click');
         this.end_time = this.time_to_show;
         var gradient = this.ctx.createLinearGradient(0, 0, this.canvas.width, 0);
@@ -238,12 +248,18 @@ Game.gameover = function() {
         that = this;
         this.isrestart = true;
         setTimeout(function () {
+
             that.setDifficulty();
+            that.showscores = true;
         }, 5000);
     }
     if (this.end_time) {
-        this.ctx.fillText("Game Over. Score: " + this.balloons_caught + ", Time: " + this.end_time, this.canvas.width * 0.2, this.canvas.height * 0.2);
+        this.ctx.fillText("Game Over. Score: " + this.balloons_caught + ", Time: " + this.end_time, this.canvas.width * START_TEXT_INTRO_X, this.canvas.height * START_TEXT_INTRO_Y);
         this.ctx.fillText(DIFF_TOTAL,this.canvas.width * START_TEXT_BEGIN_X,this.canvas.height * START_TEXT_BEGIN_Y);
+        if (this.showscores) {
+            this.getScores();
+        }
+
     }
 };
 
@@ -253,13 +269,12 @@ Game.randomBalloon = function() {
     var xcoord = (Math.floor(Math.random()*(max_width*0.9) )+max_width*0.05);
     var ycoord = max_height;
     var ratioSize = RATIO_SIZE - this.balloons_caught / RATIO_DECREASE ;
-    console.log("Ratio Size: %f", ratioSize );
     var randomSize = (24+Math.floor(Math.random()*50))*this.ratio*ratioSize;
 
     var getRandomRGB = function() { return  Math.floor(Math.random()*255) };
     var randomColor = { r : getRandomRGB(), g : getRandomRGB(), b : getRandomRGB() };
     var balloonSpeed = BALLOON_SPEED + this.balloons_caught / SPEED_INCREASE ;
-    console.log("Balloon Speed: %f", balloonSpeed );
+
     return balloonConstructor(xcoord, ycoord, randomSize , randomColor, max_width, balloonSpeed);
 };
 
@@ -277,7 +292,7 @@ Game.tick = function() {
     var balloonFrequency = BALLOON_FREQUENCY - SPEED_MODIFIER * this.balloons.length;
     if (!this.isrestart) {
         if (Math.random() < balloonFrequency && this.balloons.length < MAX_BALLOONS) {
-            console.log("Balloon Frequency: %f", balloonFrequency );
+
             this.balloons.push(this.randomBalloon());
         }
     }

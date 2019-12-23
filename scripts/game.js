@@ -111,6 +111,11 @@ Game.restart = function(diff_level) {
 };
 
 Game.init = function() {
+    that = this;
+    $.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function(data) {
+        var location = data["geobyteslocationcode"];
+        that.name = prompt("Please enter your name", location);
+    });
     var search_substr = window.location.search.substr(1);
     if (search_substr) {
         MAX_LOST_BALLOONS =  parseInt(search_substr) || MAX_LOST_BALLOONS;
@@ -187,25 +192,18 @@ Game.setDifficulty = function() {
 };
 
 Game.fillscore = function(data) {
-    const SCORE_X_1 = 0.15, SCORE_X_2 = 0.65;
-    const SCORE_Y_1 = 0.5, SCORE_Y_2 = 0.65,  SCORE_Y_3 = 0.8;
+    const SCORE_X_1 = 0.05, SCORE_X_2 = 0.45, SCORE_X_3 = 0.75;
+    const SCORE_Y = [0.5, 0.65, 0.8];
     that = this;
     if (data) {
-        that.ctx.fillText("HIGH SCORES", that.canvas.width * 0.3, that.canvas.height * 0.37)
+        that.ctx.fillText("HIGH SCORES - "+that.diff_level, that.canvas.width * 0.28, that.canvas.height * 0.37)
 
-        if (data.length > 0) {
-            that.ctx.fillText(data[0][0], that.canvas.width * SCORE_X_1, that.canvas.height * SCORE_Y_1)
-            that.ctx.fillText(data[0][1], that.canvas.width * SCORE_X_2, that.canvas.height * SCORE_Y_1)
-        }
-
-        if (data.length > 1) {
-            that.ctx.fillText(data[1][0], that.canvas.width * SCORE_X_1, that.canvas.height * SCORE_Y_2)
-            that.ctx.fillText(data[1][1], that.canvas.width * SCORE_X_2, that.canvas.height * SCORE_Y_2)
-        }
-
-        if (data.length > 2) {
-            that.ctx.fillText(data[2][0], that.canvas.width * SCORE_X_1, that.canvas.height * SCORE_Y_3)
-            that.ctx.fillText(data[2][1], that.canvas.width * SCORE_X_2, that.canvas.height * SCORE_Y_3)
+        for (var i = 0; i < 3; i++) {
+            if (data.length > i) {
+                that.ctx.fillText(data[i]["score_day"], that.canvas.width * SCORE_X_1, that.canvas.height * SCORE_Y[i])
+                that.ctx.fillText(data[i]["name"], that.canvas.width * SCORE_X_2, that.canvas.height * SCORE_Y[i])
+                that.ctx.fillText(data[i]["score"], that.canvas.width * SCORE_X_3, that.canvas.height * SCORE_Y[i])
+            }
         }
     }
 }
@@ -230,7 +228,7 @@ Game.addscore = function(score) {
     this.scores = undefined;
     var url = SCORE_URL + this.diff_level.toLowerCase();
     that = this;
-    $.post(url, {"score" :  score , "name" : "Diego"} , function() {
+    $.post(url, {"score" :  score , "name" : that.name} , function() {
         that.getScores();
     },  "json");
 }
@@ -270,7 +268,6 @@ Game.randomBalloon = function() {
     var ycoord = max_height;
     var ratioSize = RATIO_SIZE - this.balloons_caught / RATIO_DECREASE ;
     var randomSize = (24+Math.floor(Math.random()*50))*this.ratio*ratioSize;
-
     var getRandomRGB = function() { return  Math.floor(Math.random()*255) };
     var randomColor = { r : getRandomRGB(), g : getRandomRGB(), b : getRandomRGB() };
     var balloonSpeed = BALLOON_SPEED + this.balloons_caught / SPEED_INCREASE ;

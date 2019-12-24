@@ -19,7 +19,7 @@ const HIGH_SCORE_BEGIN_X = 0.28;
 const HIGH_SCORE_BEGIN_Y = 0.37;
 
 
-const DIFF_0 = "Select ", DIFF_1 = "E: Easy", DIFF_2 = "S: Standard", DIFF_3 = "H: Hard", DIFF_4 = "V: VHard";
+const DIFF_0 = "Tap ", DIFF_1 = "E: Easy", DIFF_2 = "S: Standard", DIFF_3 = "H: Hard", DIFF_4 = "V: VHard";
 const HIGH_SCORES_TEXT = "High Scores - ";
 const HIGH_SCORES_LENGTH = HIGH_SCORES_TEXT.length;
 const DIFF_TOTAL = DIFF_0 + DIFF_1 + ", " + DIFF_2 + ", " + DIFF_3 + ", " + DIFF_4;
@@ -146,9 +146,9 @@ Game.init = function() {
     this.canvas.height = window.innerHeight;
     this.ctx = this.canvas.getContext('2d');
 
-    this.ratio = (this.canvas.width / 1000).toFixed(0).toString();
+    this.ratio = this.canvas.width / 1000;
 
-    this.fontSize = DEFAULT_FONT_SIZE * this.ratio ;
+    this.fontSize = (DEFAULT_FONT_SIZE * this.ratio).toFixed(0).toString() ;
     this.ctx.font = (this.fontSize | DEFAULT_FONT_SIZE) + "px Verdana";
     this.is_gradient = 0;
     this.updateGradient();
@@ -159,7 +159,8 @@ Game.init = function() {
         this.diff_level = "S";
     }
 
-    this.ctx.fillText(DIFF_TOTAL,this.canvas.width * START_TEXT_BEGIN_X,this.canvas.height * START_TEXT_BEGIN_Y);
+    this.draw_diff_levels();
+
     this.getScores();
     this.setDifficulty();
 };
@@ -181,21 +182,21 @@ Game.setDifficulty = function() {
         var x = event.clientX / canvas_ratio_x,
             y = event.clientY / canvas_ratio_y;
         var tcv = that.canvas.width * START_TEXT_BEGIN_X ;
-        var tch = that.canvas.height * START_TEXT_BEGIN_Y - bheight / 2;
+        var tch = that.canvas.height * START_TEXT_BEGIN_Y - bheight * 0.75;
 
         var tsv = that.canvas.width * HIGH_SCORE_BEGIN_X ;
         var tsh = that.canvas.height * HIGH_SCORE_BEGIN_Y - bheight / 2;
 
 
 
-        if ((y >= tch) && (y <= tch + bheight)) {
-            if ((x >= tcv + x_unit * (DIFF_OFFSET_1-0.5) )  && (x <= tcv + x_unit * (DIFF_OFFSET_1 + DIFF_LENGTH_1)) ) {
+        if ((y >= tch) && (y <= tch + bheight * 1.25)) {
+            if ((x >= tcv + x_unit * (DIFF_OFFSET_1-0.5) )  && (x <= tcv + x_unit * (DIFF_OFFSET_1 + DIFF_LENGTH_1 + 0.5)) ) {
                 that.restart("E");
-            } else if ((x >= tcv + x_unit * (DIFF_OFFSET_2-0.5))  && (x <= tcv + x_unit * (DIFF_OFFSET_2 + DIFF_LENGTH_2)) ) {
+            } else if ((x >= tcv + x_unit * (DIFF_OFFSET_2-0.5))  && (x <= tcv + x_unit * (DIFF_OFFSET_2 + DIFF_LENGTH_2 + 0.5)) ) {
                 that.restart("S");
-            } else if ((x >= tcv + x_unit * (DIFF_OFFSET_3-0.5))  && (x <= tcv + x_unit * (DIFF_OFFSET_3 + DIFF_LENGTH_3)) ) {
+            } else if ((x >= tcv + x_unit * (DIFF_OFFSET_3-0.5))  && (x <= tcv + x_unit * (DIFF_OFFSET_3 + DIFF_LENGTH_3 + 0.5)) ) {
                 that.restart("H");
-            } else if ((x >= tcv + x_unit * (DIFF_OFFSET_4 -0.5))  && (x <= tcv + x_unit * (DIFF_OFFSET_4 + DIFF_LENGTH_4)) ) {
+            } else if ((x >= tcv + x_unit * (DIFF_OFFSET_4 -0.5))  && (x <= tcv + x_unit * (DIFF_OFFSET_4 + DIFF_LENGTH_4 + 0.5)) ) {
                 that.restart("V");
             }
         } else if ((y >= tsh) && (y <= tsh + bheight)) {
@@ -283,13 +284,45 @@ Game.gameover = function() {
             this.updateGradient();
         }
         this.ctx.fillText("Game Over. Score: " + this.balloons_caught + ", Time: " + this.end_time, this.canvas.width * START_TEXT_INTRO_X, this.canvas.height * START_TEXT_INTRO_Y);
-        this.ctx.fillText(DIFF_TOTAL,this.canvas.width * START_TEXT_BEGIN_X,this.canvas.height * START_TEXT_BEGIN_Y);
+        this.draw_diff_levels();
         if (this.showscores) {
             this.getScores();
         }
 
     }
 };
+
+Game.draw_diff_levels = function() {
+    let bwidth =  this.ctx.measureText(DIFFICULTY_CHOICE).width;
+    let bheight = this.ctx.measureText('M').width*1.3;
+
+    this.ctx.fillText(DIFF_TOTAL,this.canvas.width * START_TEXT_BEGIN_X,this.canvas.height * START_TEXT_BEGIN_Y);
+    var x_unit =  bwidth / DIFF_LENGTH_TOTAL;
+    var tcv = that.canvas.width * START_TEXT_BEGIN_X ;
+    var tch = that.canvas.height * START_TEXT_BEGIN_Y - bheight * 0.75;
+
+    var tsv = that.canvas.width * HIGH_SCORE_BEGIN_X ;
+    var tsh = that.canvas.height * HIGH_SCORE_BEGIN_Y - bheight / 2;
+
+    this.ctx.lineWidth = 3 * this.ratio;
+    this.ctx.setLineDash([15, 3, 3, 3]);
+    this.ctx.beginPath();
+    this.ctx.rect( tcv + x_unit * (DIFF_OFFSET_1-0.5), tch,  x_unit * (DIFF_LENGTH_1 +0.5), bheight * 1.25);
+    this.ctx.stroke();
+
+    this.ctx.beginPath();
+    this.ctx.rect( tcv + x_unit * (DIFF_OFFSET_2-0.5), tch,  x_unit * (DIFF_LENGTH_2 + 0.5), bheight * 1.25);
+    this.ctx.stroke();
+
+    this.ctx.beginPath();
+    this.ctx.rect( tcv + x_unit * (DIFF_OFFSET_3-0.5), tch,  x_unit * (DIFF_LENGTH_3 + 0.5), bheight * 1.25);
+    this.ctx.stroke();
+
+    this.ctx.beginPath();
+    this.ctx.rect( tcv + x_unit * (DIFF_OFFSET_4-0.5), tch,  x_unit * (DIFF_LENGTH_4 + 0.5), bheight * 1.25);
+    this.ctx.stroke();
+
+}
 
 Game.randomBalloon = function() {
     var max_width = this.canvas.width;

@@ -146,7 +146,7 @@ Game.init = function() {
     this.canvas.height = window.innerHeight;
     this.ctx = this.canvas.getContext('2d');
 
-    this.ratio = this.canvas.width / 1000;
+    this.ratio = (this.canvas.width / 1000).toFixed(0).toString();
 
     this.fontSize = DEFAULT_FONT_SIZE * this.ratio ;
     this.ctx.font = (this.fontSize | DEFAULT_FONT_SIZE) + "px Verdana";

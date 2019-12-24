@@ -221,7 +221,7 @@ Game.setDifficulty = function() {
 };
 
 Game.fillscore = function(data) {
-    const SCORE_X_1 = 0.05, SCORE_X_2 = 0.45, SCORE_X_3 = 0.75;
+    const SCORE_X_1 = 0.05, SCORE_X_2 = 0.5, SCORE_X_3 = 0.8;
     const SCORE_Y = [0.5, 0.65, 0.8];
     that = this;
     if (data) {

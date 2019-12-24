@@ -24,7 +24,7 @@ balloons-docker:
   links:
     - scoreboard-docker
   container_name: balloons-docker
-  build: https://github.com/diegoami/balloons-JS
+  build: https://github.com/diegoami/balloons-JS.git
   ports:
     - 80:80
   restart: always

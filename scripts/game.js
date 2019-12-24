@@ -34,7 +34,7 @@ const DEFAULT_FONT_SIZE = 30;
 
 
 
-const SCORE_URL = "http://localhost:5000/scores/highscores_bln_";
+const SCORE_URL = 'http://'+ window.location.host+':5000/scores/highscores_bln_';
 
 
 

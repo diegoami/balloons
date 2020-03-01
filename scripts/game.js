@@ -13,7 +13,7 @@ DIFF_LEVEL = "E";
 
 const START_TEXT_BEGIN_X = 0.05;
 const START_TEXT_INTRO_X = 0.05;
-const START_TEXT_INTRO_Y = 0.05;
+const START_TEXT_INTRO_Y = 0.08;
 const START_TEXT_BEGIN_Y = 0.2;
 const HIGH_SCORE_BEGIN_X = 0.28;
 const HIGH_SCORE_BEGIN_Y = 0.37;
@@ -148,11 +148,11 @@ Game.init = function() {
 
     this.ratio = this.canvas.width / 1000;
 
-    this.fontSize = (DEFAULT_FONT_SIZE * this.ratio).toFixed(0).toString() ;
+    this.fontSize = Math.max(DEFAULT_FONT_SIZE * this.ratio).toFixed(0).toString() ;
     this.ctx.font = (this.fontSize | DEFAULT_FONT_SIZE) + "px Verdana";
     this.is_gradient = 0;
     this.updateGradient();
-    this.ctx.fillText("Stop the balloons, before it is too late !!",this.canvas.width * START_TEXT_INTRO_Y,this.canvas.height * START_TEXT_INTRO_X);
+    this.ctx.fillText("Stop the balloons, before it is too late !!",this.canvas.width * START_TEXT_INTRO_X,this.canvas.height * START_TEXT_INTRO_Y);
 
     this.diff_level = Cookies.get("diff_level");
     if (!this.diff_level) {
